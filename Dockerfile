@@ -39,7 +39,7 @@ RUN set -ex; \
         gnupg2 \
 	locales \
 	xfonts-intl-chinese \
-	fonts-wqy-microhei \  
+	fonts-wqy-microhei \
 	ibus-pinyin \
 	ibus \
 	ibus-clutter \
