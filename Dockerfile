@@ -7,7 +7,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get upgrade
 RUN set -ex; \
     apt-get update \
-    && apt-get install -y --no-install-recommends \
         dbus-x11 \
         nautilus \
         gedit \
@@ -24,6 +23,7 @@ RUN set -ex; \
 	xvfb \
         supervisor \
         curl \
+        sudo \
         git \
 	pulseaudio \
         wget \
@@ -52,9 +52,6 @@ RUN set -ex; \
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
-RUN sudo apt-get install openjdk-8-jdk
-RUN sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0_version/bin/java
-RUN apt-get install sudo
 RUN sudo dpkg -i package_file.deb
 RUN sudo apt-get install -y dpkg-sig
 
