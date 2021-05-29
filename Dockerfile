@@ -12,7 +12,6 @@ RUN set -ex; \
         nautilus \
         gedit \
         expect \
-        sudo \
         vim \
 	vlc \
         bash \
@@ -35,7 +34,6 @@ RUN set -ex; \
 	firefox \
         terminator \
         htop \
-	dpkg-sig \
 	dpkg-deb \
         gnupg2 \
 	locales \
