@@ -25,6 +25,7 @@ RUN set -ex; \
         supervisor \
         curl \
         git \
+	obs-studio \
 	pulseaudio \
         wget \
         g++ \
@@ -50,8 +51,6 @@ RUN set -ex; \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
-
-RUN sudo apt-get update obs-studio
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
