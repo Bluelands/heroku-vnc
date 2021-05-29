@@ -15,6 +15,7 @@ RUN set -ex; \
         vim \
 	vlc \
         bash \
+	dpkg-sig \
         net-tools \
         novnc \
         xfce4 \
@@ -52,8 +53,6 @@ RUN set -ex; \
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
-RUN sudo dpkg -i package_file.deb
-RUN sudo apt-get install -y dpkg-sig
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
