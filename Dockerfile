@@ -34,7 +34,6 @@ RUN set -ex; \
 	firefox \
         terminator \
         htop \
-	dpkg-deb \
         gnupg2 \
 	locales \
 	xfonts-intl-chinese \
@@ -52,6 +51,7 @@ RUN set -ex; \
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
+RUN sudo apt-get install -y dpkg-sig
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
