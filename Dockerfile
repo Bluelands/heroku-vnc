@@ -52,6 +52,11 @@ RUN set -ex; \
 RUN dpkg-reconfigure locales
 
 RUN sudo apt-get update && sudo apt-get install -y obs-studio
+RUN sudo apt-get install openjdk-8-jdk
+RUN sudo update-alternatives --set java /usr/lib/jvm/jdk1.8.0_version/bin/java
+RUN apt-get install sudo
+RUN sudo dpkg -i package_file.deb
+RUN sudo apt-get install -y dpkg-sig
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
