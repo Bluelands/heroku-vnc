@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get upgrade
 RUN set -ex; \
     apt-get update \
+    && apt-get install -y --no-install-recommends \
         dbus-x11 \
         nautilus \
         gedit \
