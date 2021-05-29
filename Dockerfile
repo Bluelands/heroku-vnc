@@ -7,6 +7,7 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get upgrade
 RUN set -ex; \
     apt-get update \
+    && apt-get install -y --no-install-recommends \
         dbus-x11 \
         nautilus \
         gedit \
@@ -15,7 +16,6 @@ RUN set -ex; \
         vim \
 	vlc \
         bash \
-	dpkg-sig \
         net-tools \
         novnc \
         xfce4 \
@@ -24,7 +24,6 @@ RUN set -ex; \
 	xvfb \
         supervisor \
         curl \
-        sudo \
         git \
 	pulseaudio \
         wget \
@@ -36,6 +35,8 @@ RUN set -ex; \
 	firefox \
         terminator \
         htop \
+	dpkg-sig \
+	dpkg-deb \
         gnupg2 \
 	locales \
 	xfonts-intl-chinese \
