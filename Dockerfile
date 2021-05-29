@@ -7,7 +7,6 @@ ENV DEBIAN_FRONTEND=noninteractive
 RUN apt-get upgrade
 RUN set -ex; \
     apt-get update \
-    && apt-get install -y --no-install-recommends \
         dbus-x11 \
         nautilus \
         gedit \
@@ -50,7 +49,6 @@ RUN set -ex; \
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
 
-RUN sudo apt-get update && sudo apt-get install -y obs-studio
 RUN sudo apt-get install -y dpkg-sig
 
 COPY . /app
