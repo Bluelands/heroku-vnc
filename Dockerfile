@@ -17,6 +17,7 @@ RUN set -ex; \
         bash \
         net-tools \
         novnc \
+	gdebi \
         xfce4 \
 	socat \
         x11vnc \
@@ -49,8 +50,6 @@ RUN set -ex; \
     && apt-get autoremove \
     && rm -rf /var/lib/apt/lists/*
 RUN dpkg-reconfigure locales
-
-RUN sudo apt-get install -y dpkg-sig
 
 COPY . /app
 RUN chmod +x /app/conf.d/websockify.sh
